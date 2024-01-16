@@ -1,11 +1,2 @@
 /target
-*.ipynb_checkpoints
-/.vscode
-*__pycache__
-*DONTSYNC*
-
-# Added by cargo
-#
-# already existing elements were commented out
-
-#/target
+*.swp
