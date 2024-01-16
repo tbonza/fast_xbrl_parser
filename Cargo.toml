@@ -1,18 +1,8 @@
 [package]
 name = "fast_xbrl_parser"
-version = "0.3.0"
+version = "0.1.0"
 edition = "2021"
 
-[workspace]
-members = ["python-bindings"]
-
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-roxmltree = "*"
-regex = "*"
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "*"
-clap = { version = "3.0.0-beta.5", features = ["derive"] }
-reqwest = { version = "*" , features = ["blocking"] }
-csv = "*"
-scraper = "*"
