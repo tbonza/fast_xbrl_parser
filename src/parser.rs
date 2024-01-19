@@ -13,6 +13,16 @@ struct Unit {
   unit_value : String
 }
 
+impl Unit {
+    fn to_string(&self) -> String {
+        let mut unit_string = String::new();
+        unit_string.push_str(&self.unit_type);
+        unit_string.push_str(" -- ");
+        unit_string.push_str(&self.unit_value);
+        unit_string
+    }
+}
+
 struct Period {
   period_type : String,
   period_value : String
@@ -31,28 +41,19 @@ struct FactItem {
   periods : Vec<Period>
 }
 
-struct DimensionTableRow {
-  cik : Option<String>,
-  accession_number : Option<String>,
-  xml_name : String,
-  context_ref : String,
-  axis_prefix : String,
-  axis_tag : String,
-  member_prefix : String,
-  member_tag : String,
-}
-
-impl DimensionTableRow {
-    fn default() -> DimensionTableRow {
-        DimensionTableRow {
-            cik : None,
-            accession_number : None,
-            xml_name : "".to_string(),
-            context_ref : "".to_string(),
-            axis_prefix : "".to_string(),
-            axis_tag : "".to_string(),
-            member_prefix : "".to_string(),
-            member_tag : "".to_string(),
+impl FactItem {
+    fn default() -> FactItem {
+        FactItem {
+            id : "".to_string(),
+            prefix: "".to_string(),
+            name : "".to_string(),
+            value : "".to_string(),
+            decimals : "".to_string(),
+            context_ref : None,
+            unit_ref : None,
+            dimensions : Vec::new(),
+            units : Vec::new(),
+            periods : Vec::new()
         }
     }
 }
