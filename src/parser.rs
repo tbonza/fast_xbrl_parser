@@ -81,6 +81,8 @@ fn facts_to_table(facts : Vec<FactItem>, input_details : InputDetails)
     for fact in facts {
 
         let mut row = FactTableRow::default();
+        // TODO parsing "input_details" from the actual URL.
+        //      will need to update this to extract only from the XML.
         row.cik = input_details.cik.clone();
         row.accession_number = input_details.accession_number.clone();
         row.xml_name = input_details.xml_name.clone();
@@ -311,6 +313,9 @@ fn parse_xml_to_facts(raw_xml : String) -> Vec<FactItem> {
     }
 
     facts;
+}
+
+pub fn parse_xbrl() {
 }
 
 
